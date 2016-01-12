@@ -185,7 +185,7 @@ object EnsimePlugin extends AutoPlugin {
         scalaOrganization.value % "scala-compiler" % scalaVersion.value,
         scalaOrganization.value % "scala-library" % scalaVersion.value,
         scalaOrganization.value % "scala-reflect" % scalaVersion.value,
-        scalaOrganization.value % "scalap" % scalaVersion.value
+        scalaOrganization.value % "scalap" % scalaVersion.value.takeWhile(_ != '-')
       ).map(_ % EnsimeInternal.name intransitive ())
     },
     libraryDependencies ++= EnsimeKeys.ensimeScalaCompilerJarModuleIDs.value,
